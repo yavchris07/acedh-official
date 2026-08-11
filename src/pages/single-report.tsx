@@ -54,6 +54,10 @@ const SingleReport = () => {
         <div className="text-gray-500 text-xl max-sm:text-sm">
           {formatResume(activity?.resume ?? "")}
         </div>
+
+        <p className="text-2xl text-green-600 text-center italic">
+          En cours de développement
+        </p>
       </div>
       <Footer />
     </div>
