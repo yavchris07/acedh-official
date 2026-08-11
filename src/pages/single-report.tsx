@@ -12,7 +12,7 @@ const SingleReport = () => {
     console.log("Rapport non trouve !!");
   }
 
-  const idx = decryptId(id);
+  const idx = decryptId(id ?? "");
   const { activity, loading } = useGetActivity(Number(idx));
   //   const { comments, error, loading: load, refresh } = useComments(Number(idx));
 

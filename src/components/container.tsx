@@ -52,7 +52,7 @@ const Container = ({ children }: containerProps) => {
 
   const logOut = () => {
     localStorage.removeItem("userEmail");
-    setUser(null);
+    setUser('');
     router("/auth", { replace: true });
   };
 

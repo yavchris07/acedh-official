@@ -20,7 +20,8 @@ export const userApi = {
   },
 
   update: async (id: number, data: User) => {
-    const res = await fetch(`${API_URL}/change-password/`, {
+
+    const res = await fetch(`${API_URL}/change-password/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
