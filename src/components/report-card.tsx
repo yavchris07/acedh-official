@@ -1,7 +1,7 @@
 import { FileChartColumnIncreasing, Download } from "lucide-react";
-import type { Project,Report } from "../utils/type";
- 
- 
+import type { Project, Report } from "../utils/type";
+import { encryptId } from "../utils/crypting";
+import { useNavigate } from "react-router";
 
 type reportCardProps = {
   report: Report;
@@ -10,6 +10,7 @@ type reportCardProps = {
 };
 
 const ReportCard = ({ report, project, onOpen }: reportCardProps) => {
+  const navigate = useNavigate();
   const handleDownload = async () => {
     try {
       const res = await fetch(report.fichier_pdf);
@@ -62,16 +63,26 @@ const ReportCard = ({ report, project, onOpen }: reportCardProps) => {
           : report.commentaire.substring(0, 190)}{" "}
         {report.commentaire.length < 190 ? report.commentaire : "..."}
       </span>
-      <span
-        className="flex items-center w-40 gap-2 bg-green-800 text-white rounded my-2 px-2 py-2 cursor-pointer"
-        onClick={report.type_document === "rapport" ? onOpen : handleDownload}
-      >
-        <Download color="white" size={20} />{" "}
-        {report.type_document === "rapport" ? "Autorisation" : "Télécharger"}
-      </span>
+      <div className="flex justify-between">
+        <span
+          className="flex items-center w-40 gap-2 bg-green-800 text-white rounded my-2 px-2 py-2 cursor-pointer"
+          onClick={report.type_document === "rapport" ? onOpen : handleDownload}
+        >
+          <Download color="white" size={20} />{" "}
+          {report.type_document === "rapport" ? "Autorisation" : "Télécharger"}
+        </span>
+        <span
+          onClick={() => {
+            const id = encryptId(report.id);
+            navigate(`/rapport/${id}`);
+          }}
+          className="flex items-center w-20 gap-2 bg-green-800 text-white rounded my-2 px-2 py-2 cursor-pointer"
+        >
+          Lire plus
+        </span>
+      </div>
     </div>
   );
 };
 
 export default ReportCard;
-
