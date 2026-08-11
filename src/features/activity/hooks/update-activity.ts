@@ -1,0 +1,1 @@
+export const updateActivity = (formData:FormData)=> {console.log(formData)}
