@@ -19,7 +19,7 @@ const HomePage = () => {
   const { teamMembers, loading } = useTeamMembers();
   const { scraps } = useScrapping();
 
-  const [isAvailble] = useState(true)
+  const [isAvailble] = useState(false)
 
   // const today = new Date();
 
