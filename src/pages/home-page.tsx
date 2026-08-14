@@ -1,3 +1,4 @@
+import { useState } from "react";
 import drill from "../assets/drill.avif";
 import EventCarousel from "../components/event-caroussel";
 import Footer from "../components/footer";
@@ -18,21 +19,23 @@ const HomePage = () => {
   const { teamMembers, loading } = useTeamMembers();
   const { scraps } = useScrapping();
 
-  const today = new Date();
+  const [isAvailble] = useState(true)
 
-  const isAugust13 =
-    today.getFullYear() === 2026 &&
-    today.getMonth() === 7 && // août = 7
-    today.getDate() === 10;
+  // const today = new Date();
 
-  if (isAugust13) {
+  // const isAugust13 =
+  //   today.getFullYear() === 2026 &&
+  //   today.getMonth() === 7 && // août = 7
+  //   today.getDate() === 10;
+
+  if (isAvailble) {
     return (
       <div className="text-center mt-56">
         {" "}
         <img src="" />
-        <h1 className="text-red-500 2xl font-semibold my-4">Le problème d'hébergement web</h1>{" "}
-        <span className="text-gray-500 font-semibold">
-          Veuilez contacter IT Manager de l'organisation ou l'equipe d'Alt Space
+        <h1 className="text-red-500 text-2xl font-semibold my-4">Le problème d'hébergement web</h1>{" "}
+        <span className="text-gray-500">
+          Veuilez contacter IT Manager de l'organisation ou l'équipe d'<strong>Alt Space</strong>.
         </span>
       </div>
     );
