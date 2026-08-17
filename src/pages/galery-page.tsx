@@ -9,7 +9,7 @@ const GaleryPage = () => {
   const { galleries, error, loading } = useGallery();
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9;
+  const itemsPerPage = 12;
 
 
   //  const sortedItems = useMemo(() => {
@@ -56,10 +56,10 @@ const GaleryPage = () => {
             </p>
           )}
         </div>
-        <div className="w-[70%] mx-auto my-4 grid grid-cols-3 gap-2">
+        <div className="w-[70%] mx-auto my-4 grid grid-cols-4 gap-2">
           {currentGalleries.map((event, i) => (
             <GaleryItem galery={event} key={i} />
-          ))}
+          ))} 
         </div>
 
         {galleries.length > 8 && (

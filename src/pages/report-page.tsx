@@ -28,6 +28,8 @@ const ReportPage = () => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentRapports = sortedItems.slice(indexOfFirstItem, indexOfLastItem);
 
+  console.log('RAPPORTS : ',currentRapports);
+
   const totalPages = Math.ceil(projects.length / itemsPerPage);
   return (
     <div className="bg-zinc-50">
