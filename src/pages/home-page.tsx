@@ -13,6 +13,8 @@ import WhatWeDo from "../components/what-we-do";
 import { usePartners } from "../features/partner/hooks/use-fetch-partners";
 import { useScrapping } from "../features/scrapping/hooks/use-scrappings";
 import { useTeamMembers } from "../features/team/hooks/use-fetch-team-members";
+import { axes } from "../utils/axes";
+import PriorityAxeCard from "../components/priority-axe-card";
 
 const HomePage = () => {
   const { partners } = usePartners();
@@ -66,60 +68,16 @@ const HomePage = () => {
               est la toute première Organisation de la Société Civile du Nord
               Kivu.
             </p>
-            <div className="flex gap-2 my-3">
-              <div className="bg-amber-600 rounded-full w-4 h-4 mt-2 border-2 border-green-700"></div>
-              <p className="text-green-800">
-                Gouvernance responsable, transparente et durable de régimes
-                fonciers, peches et aspects connexes
-              </p>
-            </div>
-            <div className="flex gap-2 my-3">
-              <div className="bg-amber-600 rounded-full w-4 h-4 mt-2 border-2 border-green-700"></div>
-              <p className="text-green-800">
-                Appuis aux réformes juridiques et institutionnelles impactant
-                les fonciers, énergies renouvelables et l&apos;environnement.
-              </p>
-            </div>
-
-            <div className="flex gap-2 my-3">
-              <div className="bg-amber-600 rounded-full w-4 h-4 mt-2 border-2 border-green-700"></div>
-              <p className="text-green-800">
-                {" "}
-                Justice environnementale et protection de la faune et flore
-                sauvages par l&apos;aide légale
-              </p>
-            </div>
-
-            <div className="flex gap-2 my-3">
-              <div className="bg-amber-600 rounded-full w-4 h-4 mt-2 border-2 border-green-700"></div>
-              <p className="text-green-800">
-                {" "}
-                Protections légale de défenseurs des droites fonciers et
-                l&apos;environnement
-              </p>
-            </div>
-
-            <div className="flex gap-2 my-3">
-              <div className="bg-amber-600 rounded-full w-4 h-4 mt-2 border-2 border-green-700"></div>
-              <p className="text-green-800">
-                {" "}
-                Accès à tous à l&apos;énergie durable, abordable et fiable pro
-                pauvres
-              </p>
-            </div>
-
-            <div className="flex gap-2 my-3">
-              <div className="bg-amber-600 rounded-full w-4 h-4 mt-2 border-2 border-green-700"></div>
-              <p className="text-green-800">
-                {" "}
-                Conentieux climatiques stratégiques, appui juridique légale aux
-                investissements locaux verts pour une transition juste
-              </p>
+            
+             <div>
+              {axes.map((axe)=> <PriorityAxeCard axe={axe} />)}
             </div>
 
             {/* à penser mettre en place une Task Force des Avocats Verts
               pour assurer une défense légale en faveur de la faune et flore
               sauve en collaboration avec le Parc National des Virunga. */}
+
+              
           </div>
           <div>
             <img
