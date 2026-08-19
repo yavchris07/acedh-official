@@ -1,9 +1,9 @@
 import { useParams } from "react-router";
 import Footer from "../components/footer";
 import Header from "../components/header";
-import { useGetActivity } from "../features/activity/hooks/use-get-activity";
 import { decryptId } from "../utils/crypting";
 import { formatResume } from "../utils/format-resume";
+import { useGetReport } from "../features/rapport/hooks/use-get-report";
 
 const SingleReport = () => {
   const { id } = useParams<{ id: string }>();
@@ -13,18 +13,12 @@ const SingleReport = () => {
   }
 
   const idx = decryptId(id ?? "");
-  const { activity, loading } = useGetActivity(Number(idx));
+  // const { activity, loading } = useGetActivity(Number(idx));
   //   const { comments, error, loading: load, refresh } = useComments(Number(idx));
+  const {error,loading,report} = useGetReport(Number(idx));
+  console.log('RRRR : ',report)
 
-  // export type Report = {
-  //   fichier_pdf: string;
-  //   commentaire: string;
-  //   type_document: string;
-  //   projet: number;
-  //   id: number;
-  //   date_upload: string;
-  //   page_garde: string;
-  // };
+  if(error) return <p>Une erreur s'est produite ! Veuillez reactualiser la page !</p>
 
   return (
     <div className="bg-zinc-50">
@@ -32,9 +26,9 @@ const SingleReport = () => {
       <div className="w-[70%] mx-auto max-sm:w-[97%]">
         <div className="my-4 bg-r flex gap-4">
           <div className="w-full">
-            {activity?.photo && (
+            {report?.page_garde && (
               <img
-                src={activity?.photo}
+                src={report?.page_garde}
                 width={200}
                 height={530}
                 alt="image blog"
@@ -49,15 +43,15 @@ const SingleReport = () => {
         </div>
 
         <h2 className="text-gray-900 text-2xl font-semibold my-4">
-          {activity?.titre}
+          {report?.commentaire.substring(0,120)}
         </h2>
         <div className="text-gray-500 text-xl max-sm:text-sm">
-          {formatResume(activity?.resume ?? "")}
+          {formatResume(report?.commentaire ?? "")}
         </div>
 
-        <p className="text-2xl text-green-600 text-center italic">
+        {/* <p className="text-2xl text-green-600 text-center italic">
           En cours de développement
-        </p>
+        </p> */}
       </div>
       <Footer />
     </div>

@@ -7,6 +7,12 @@ export const reportApi = {
     return res.json();
   },
 
+  get: async (id: number) => {
+    const res = await fetch(`${API_URL}/document_detail/${id}/`);
+    if (!res.ok) throw new Error("Erreur fetch activity");
+    return res.json();
+  },
+
   create: async (data: FormData) => {
     const res = await fetch(`${API_URL}/rapport/create/`, {
       method: "POST",
