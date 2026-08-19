@@ -3,6 +3,7 @@ import Header from "../components/header";
 import Statistics from "../components/statistics";
 import { useAccompagnment } from "../features/accompaniment/hooks/use-accompagnement";
 import { useEnvironment } from "../features/environment/hooks/use-environments";
+import { formatResume } from "../utils/format-resume";
 
 const ProgramPage = () => {
   const { environments } = useEnvironment();
@@ -15,17 +16,17 @@ const ProgramPage = () => {
     <div className="bg-zinc-50">
       <Header />
       <div className="bg-white my-14">
-        <div className="w-[60%] mx-auto text-center text-black">
+        <div className="w-[60%] mx-auto text-center text-black max-sm:w-[90%]">
           <div className="mt-10 text-green-700 text-sm font-semibold">
             NOS PROGRAMMES
           </div>
-          <h3 className="text-4xl text-gray-600 my-10 font-bold">
+          <h3 className="text-4xl text-gray-600 my-10 font-bold max-sm:text-xl">
             Accompagnement <span className="text-green-800">juridique</span> &
             plaidoyer
           </h3>
 
           <div className="grid grid-cols-2 gap-3 max-sm:grid-cols-1">
-            <div className="text-2xl text-start text-gray-500">
+            <div className="text-2xl text-start text-gray-500 max-sm:text-sm">
               {/* Ce programme est dédié à la défense des droits fonciers, de
               l’environnement, et à la protection juridique des défenseurs des
               droits humains et environnementaux. ACEDH agit en faveur de celles
@@ -38,7 +39,7 @@ const ProgramPage = () => {
               illégales ou de violences. Le programme vise à leur offrir un
               accompagnement juridique solide, et à porter leur voix dans les
               espaces de décision nationaux et internationaux. */}
-              {firstAccompagnement?.resume}
+              {formatResume(firstAccompagnement?.resume)}
             </div>
             <div>
               {firstAccompagnement?.photo && (
@@ -59,8 +60,8 @@ const ProgramPage = () => {
       <Statistics />
 
       <div className="bg-white my-14">
-        <div className="w-[60%] mx-auto text-center text-black">
-          <h3 className="text-4xl text-gray-600 my-10 font-bold">
+        <div className="w-[60%] mx-auto text-center text-black max-sm:w-[90%]">
+          <h3 className="text-4xl text-gray-600 my-10 font-bold max-sm:text-xl">
             Environnement et <span className="text-green-800">Justice</span>{" "}
             climatique
           </h3>
@@ -78,7 +79,7 @@ const ProgramPage = () => {
                 />
               )}
             </div>
-            <div className="text-2xl text-start text-gray-500">
+            <div className="text-2xl text-start text-gray-500 max-sm:text-sm">
               {/* Ce programme est dédié à la défense des droits fonciers, de
               l’environnement, et à la protection juridique des défenseurs des
               droits humains et environnementaux. ACEDH agit en faveur de celles
@@ -91,7 +92,7 @@ const ProgramPage = () => {
               illégales ou de violences. Le programme vise à leur offrir un
               accompagnement juridique solide, et à porter leur voix dans les
               espaces de décision nationaux et internationaux. */}
-              {firstEnvironment?.resume}
+              {formatResume(firstEnvironment?.resume)}
             </div>
             <div></div>
           </div>

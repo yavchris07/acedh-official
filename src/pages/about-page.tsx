@@ -9,17 +9,17 @@ const AboutPage = () => {
   return (<div className="bg-zinc-50">
       <Header />
       <div className="bg-white">
-        <div className="w-[60%] mx-auto text-center text-black">
+        <div className="w-[60%] mx-auto text-center text-black max-sm:w-[90%]">
           <div className="mt-10 text-green-700 text-sm font-semibold">
             A PROPOS
           </div>
-          <h3 className="text-4xl text-gray-600 my-10 font-bold">
+          <h3 className="text-4xl text-gray-600 my-10 font-bold max-sm:text-xl">
             A PROPS DE <span className="text-green-800">L&apos;ACEDH </span>
             <strong className="text-orange-900"> - </strong>
             RDC
           </h3>
 
-          <div className="text-gray-500 text-xl">
+          <div className="text-gray-500 text-xl max-sm:text-sm">
             <p className="my-4 ">
               Nous avons comme objectif, Mettre les savoirs juridiques et
               communautaires pour la protection de la nature et des droits des
@@ -36,15 +36,15 @@ const AboutPage = () => {
             </p>
           </div>
 
-          <div className="mt-10 text-orange-900 text-[20px] my-2 font-semibold">
+          <div className="mt-10 text-orange-900 text-[20px] my-2 font-semibold max-sm:text-xl">
             EN CHIFFRES
           </div>
         </div>
 
         <Statistics />
-        <div className="w-[60%] mx-auto text-center text-black">
-          <div className="text-gray-500 text-xl my-6 text-start">
-            <p className="my-2">
+        <div className="w-[60%] mx-auto text-center text-black max-sm:w-[90%]">
+          <div className="text-gray-500 text-xl my-6 text-start max-sm:text-sm">
+            <p className="my-2 ">
               L’ACEDH-RDC: créée en 2008, au Nord Kivu , en République
               démocratique du Congo, est une organisation de sauvegarde de
               l’environnement et des droits de l’homme qui a pour vision nous
@@ -116,11 +116,11 @@ const AboutPage = () => {
           </div>
 
           <div className="flex items-center gap-2 my-10">
-            <div className="w-1 h-10 bg-orange-900"></div>
-            <h3 className="text-4xl font-bold text-gray-800">Notre Equipe</h3>
+            <div className="w-1 h-10 bg-orange-900 max-sm:h-5"></div>
+            <h3 className="text-4xl font-bold text-gray-800 max-sm:text-xl">Notre Equipe</h3>
           </div>
 
-          <div className="my-10 pt-10 pb-20">
+          <div className="my-10 pt-10 pb-20 max-sm:flex-col">
             {loading && <p>Chargement ...</p>}
             <ul className="flex flex-wrap gap-3 ">
               {teamMembers.map((teamMember) => (

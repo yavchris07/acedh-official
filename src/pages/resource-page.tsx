@@ -14,11 +14,11 @@ const ResourcePage = () => {
     <div className="bg-zinc-50">
       <Header />
       <div className="bg-white">
-        <div className="w-[70%] mx-auto text-center text-black">
+        <div className="w-[70%] mx-auto text-center text-black max-sm:w-[90%]">
           <div className="mt-10 text-green-700 text-sm font-semibold">
             NOS RESSOURCES
           </div>
-          <h3 className="text-4xl text-gray-600 my-10 font-bold">
+          <h3 className="text-4xl text-gray-600 my-10 font-bold max-sm:text-xl">
             Quelques <span className="text-green-800">Ressources</span> &
             Documentations
           </h3>
@@ -40,7 +40,7 @@ const ResourcePage = () => {
               </p>
             )}
           </div>
-          <div className="grid grid-cols-3 m-3">
+          <div className="grid grid-cols-3 m-3 max-sm:grid-cols-1">
             {resources.map((r, i) => (
               <ResourceCard resource={r} key={i} />
             ))}

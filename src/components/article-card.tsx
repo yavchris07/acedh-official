@@ -40,11 +40,11 @@ const ArticleCard = ({ article }: artticleProps) => {
 
       {/* <SafeImage src={article.photo} width={300} height={220} /> */}
 
-      <h4 className="text-black mt-2 font-bold text-2xl">
+      <h4 className="text-black mt-2 font-bold text-2xl max-sm:text-xl">
         {article.titre.substring(0, 42)}{" "}
         {article.titre.length <= 42 ? "" : "..."}
       </h4>
-      <p className="text-gray-600 mt-2 mb-4">
+      <p className="text-gray-600 mt-2 mb-4 max-sm:text-sm">
         {article.resume.substring(0, 170)}...
       </p>
       <span

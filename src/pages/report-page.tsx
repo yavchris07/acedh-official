@@ -35,23 +35,23 @@ const ReportPage = () => {
     <div className="bg-zinc-50">
       <Header />
       <div className="bg-white">
-        <div className="w-[70%] mx-auto text-center text-black">
+        <div className="w-[70%] mx-auto text-center text-black max-sm:w-[90%]">
           <div className="mt-10 text-green-700 text-sm font-semibold">
             NOS RAPPORTS
           </div>
-          <h3 className="text-4xl text-gray-600 my-10 font-bold">
+          <h3 className="text-4xl text-gray-600 my-10 font-bold max-sm:text-xl">
             NOUS PUBLIONS NOS <span className="text-green-800">RAPPORTS </span>
           </h3>
 
-          <div className="text-gray-500 text-xl">
-            <p className="my-4 ">
+          <div className="text-gray-500 text-xl max-sm:text-sm">
+            <p className="my-4">
               Derrière ces rapports se trouvent des vies touchées, des
               communautés renforcées et des espoirs renouvelés.
             </p>
           </div>
 
           {/* length == 0 */}
-          <div className="text-gray-500 text-xl">
+          <div className="text-gray-500 text-xl max-sm:text-sm">
             {error && (
               <p className="text-red-500 text-sm text-center my-36">
                 Erreur due a la mauvaise connexion internet !
@@ -73,7 +73,7 @@ const ReportPage = () => {
               <SimpleDoc report={rep} key={rep.id} />
             ))}
           </div> */}
-          <div className="grid grid-cols-4 gap-2 my-4 py-3 mb-24">
+          <div className="grid grid-cols-4 gap-2 my-4 py-3 mb-24 max-sm:grid-cols-1">
             {currentRapports.map((rep) => (
               <ReportCard
                 report={rep}

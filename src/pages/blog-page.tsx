@@ -17,11 +17,11 @@ const BlogPage = () => {
     <div className="bg-zinc-50">
       <Header />
       <div className="bg-white">
-        <div className="w-[70%] mx-auto text-center text-black">
+        <div className="w-[70%] mx-auto text-center text-black max-sm:w-[97%]">
           <div className="mt-10 text-green-700 text-sm font-semibold">
             NOS ARTICLES
           </div>
-          <h3 className="text-4xl text-gray-600 my-10 font-bold">
+          <h3 className="text-4xl text-gray-600 my-10 font-bold max-sm:text-xl">
             Nous plubions chacune de nos{" "}
             <span className="text-green-800">activités</span> pour rester
             transparent
@@ -40,7 +40,7 @@ const BlogPage = () => {
             </p>
           )}
         </div>
-        <div className="w-[70%] mx-auto my-4 grid grid-cols-3 gap-2">
+        <div className="w-[70%] mx-auto my-4 grid grid-cols-3 gap-2 max-sm:w-[97%] max-sm:grid-cols-1">
           {sortedItems.map((article, i) => (
             <ArticleCard article={article} key={i} />
           ))}

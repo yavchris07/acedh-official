@@ -11,7 +11,6 @@ const GaleryPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
 
-
   //  const sortedItems = useMemo(() => {
   //       return [...galleries].sort((a, b) => {
   //         return (
@@ -34,7 +33,7 @@ const GaleryPage = () => {
           <div className="mt-10 text-green-700 text-sm font-semibold">
             NOTRE GALLLERIE
           </div>
-          <h3 className="text-4xl text-gray-600 my-10 font-bold">
+          <h3 className="text-4xl text-gray-600 my-10 font-bold max-sm:text-xl">
             Les photos de nos <span className="text-green-800">activités</span>
           </h3>
         </div>
@@ -56,10 +55,10 @@ const GaleryPage = () => {
             </p>
           )}
         </div>
-        <div className="w-[70%] mx-auto my-4 grid grid-cols-4 gap-2">
+        <div className="w-[70%] mx-auto my-4 grid grid-cols-4 gap-2 max-sm:w-[97%] max-sm:grid-cols-1">
           {currentGalleries.map((event, i) => (
             <GaleryItem galery={event} key={i} />
-          ))} 
+          ))}
         </div>
 
         {galleries.length > 8 && (
@@ -86,8 +85,8 @@ const GaleryPage = () => {
           </div>
         )}
 
-        <div className="w-[70%] mx-auto my-10">
-          <p className="text-gray-500 text-lg my-6 py-10">
+        <div className="w-[70%] mx-auto my-10 max-sm:w-[97%]">
+          <p className="text-gray-500 text-lg my-6 py-10 max-sm:text-sm">
             L’ACEDH-RDC applique une approche juridico-socio-anthropologique
             pour la sauvegarde sociale, économique, environnementale pro pauvres
             et pro nature au service de l’humanité.

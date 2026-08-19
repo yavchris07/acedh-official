@@ -41,7 +41,7 @@ const ArticlePage = () => {
           </div>
         </div>
 
-        <h2 className="text-gray-900 text-2xl font-semibold my-4">
+        <h2 className="text-gray-900 text-2xl font-semibold my-4 max-sm:text-sm">
           {activity?.titre}
         </h2>
         <div className="text-gray-500 text-xl max-sm:text-sm">

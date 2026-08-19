@@ -42,16 +42,13 @@ const SingleReport = () => {
           </div>
         </div>
 
-        <h2 className="text-gray-900 text-2xl font-semibold my-4">
+        <h2 className="text-gray-900 text-2xl font-semibold my-4 max-sm:xl">
           {report?.commentaire.substring(0,120)}
         </h2>
         <div className="text-gray-500 text-xl max-sm:text-sm">
           {formatResume(report?.commentaire ?? "")}
         </div>
 
-        {/* <p className="text-2xl text-green-600 text-center italic">
-          En cours de développement
-        </p> */}
       </div>
       <Footer />
     </div>

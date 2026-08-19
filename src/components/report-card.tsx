@@ -65,7 +65,7 @@ const ReportCard = ({ report, project, onOpen }: reportCardProps) => {
       </span>
       <div className="flex justify-between">
         <span
-          className="flex items-center w-40 gap-2 bg-green-800 text-white rounded my-2 px-2 py-2 cursor-pointer"
+          className="flex items-center w-40 gap-2 bg-green-800 text-white rounded my-2 px-2 py-2 cursor-pointer max-sm:text-sm max-sm:w-30"
           onClick={report.type_document === "rapport" ? onOpen : handleDownload}
         >
           <Download color="white" size={20} />{" "}
@@ -76,7 +76,7 @@ const ReportCard = ({ report, project, onOpen }: reportCardProps) => {
             const id = encryptId(report.id);
             navigate(`/rapport/${id}`);
           }}
-          className="flex items-center w-20 gap-2 bg-green-800 text-white rounded my-2 px-2 py-2 cursor-pointer"
+          className="flex items-center w-20 gap-2 bg-green-800 text-white rounded my-2 px-2 py-2 cursor-pointer max-sm:text-sm max-sm:w-18"
         >
           Lire plus
         </span>

@@ -20,7 +20,7 @@ const TeamItem = ({ item }: teamItemProps) => {
           // unoptimized
         />
       )}
-      <h3 className="mt-4 text-black text-xl">{item.noms}</h3>
+      <h3 className="mt-4 text-black text-xl max-sm:text-sm">{item.noms}</h3>
       <span className="text-gray-500 text-sm">{item.fonction}</span>
     </div>
   );

@@ -21,7 +21,7 @@ const GaleryItem = ({ galery }: galeryItemProps) => {
       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition" />
 
       {/* CATEGORY */}
-      <div className="absolute top-4 left-4 bg-green-600 text-white text-xs px-2 py-1 rounded-full">
+      <div className="absolute top-4 left-4 bg-green-600 text-white text-xs px-2 py-1">
         ● ACEDH-RDC
       </div>
 
