@@ -33,7 +33,7 @@ const FormContact = () => {
       <h3 className="text-green-900 text-sm font-bold my-4">
         FORMULAIRE DE CONTACT
       </h3>
-      <h2 className="text-black font-bold text-4xl">
+      <h2 className="text-black font-bold text-4xl max-sm:text-xl">
         Nous envoyer <span className="text-green-700">un message</span>{" "}
       </h2>
       <p className="text-gray-500 text-sm my-4">
@@ -41,7 +41,7 @@ const FormContact = () => {
         Nous tiendrons à répondre dans les plus brefs délais
       </p>
       <form onSubmit={handleSubmit}>
-        <div className="flex justify-between gap-1 my-3 sm:grid sm:grid-cols-1">
+        <div className="flex justify-between gap-1 my-3 max-sm:grid max-sm:grid-cols-1">
           <div className="flex flex-col gap-1">
             <label htmlFor="">Prénom</label>
             <input

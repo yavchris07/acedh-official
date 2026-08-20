@@ -3,15 +3,18 @@
 // import linked from "../public/linkenid.png";
 // import fb from "../public/facebook.png";
 
-import fb from '../assets/facebook.png'
-import linked from '../assets/linkenid.png'
-import x from '../assets/x-logo.png'
-import logo from '../assets/ACEDH.png'
+import fb from "../assets/facebook.png";
+import linked from "../assets/linkenid.png";
+import x from "../assets/x-logo.png";
+import logo from "../assets/ACEDH.png";
 
 import { useLocation } from "react-router";
+import { useState } from "react";
+import { X } from "lucide-react";
 
 export default function Header() {
   const location = useLocation();
+  const [open, setOpen] = useState(false);
 
   const menuItems = [
     { label: "Accueil", href: "/" },
@@ -21,6 +24,17 @@ export default function Header() {
     { label: "Rapports", href: "/rapports" },
     { label: "Actualités", href: "/blogs" },
     { label: "Galerie", href: "/galeries" },
+  ];
+
+  const menuItemsMobile = [
+    { label: "Accueil", href: "/" },
+    { label: "À propos", href: "/about" },
+    { label: "Ressources", href: "/resource" },
+    { label: "Programmes", href: "/programs" },
+    { label: "Rapports", href: "/rapports" },
+    { label: "Actualités", href: "/blogs" },
+    { label: "Galerie", href: "/galeries" },
+    { label: "Contacts", href: "/contact" },
   ];
 
   return (
@@ -82,21 +96,25 @@ export default function Header() {
             })}
           </nav>
           {/* Menu mobile */}
-          <div className="lg:hidden">
-            <button className="text-gray-700">
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
+          <div className="lg:hidden md:hidden">
+            <button className="text-gray-700" onClick={() => setOpen(true)}>
+              {open ? (
+                <X className="size-6" onClick={() => setOpen(!open)} />
+              ) : (
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              )}
             </button>
           </div>
           <a
@@ -106,6 +124,27 @@ export default function Header() {
             Contact
           </a>
         </div>
+        {open && (
+          <nav className="max-sm:grid max-sm:grid-cols-1 space-y-3 mt-3 lg:hidden">
+            {menuItemsMobile.map((item) => {
+              const isActive = location.pathname === item.href;
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  // className="text-gray-700 hover:text-green-600 transition-colors whitespace-nowrap"
+                  className={`transition-colors whitespace-nowrap ${
+                    isActive
+                      ? "text-orange-900 font-semibold border-orange-900 pb-1"
+                      : "text-gray-700 hover:text-orange-900"
+                  }`}
+                >
+                  {item.label}
+                </a>
+              );
+            })}
+          </nav>
+        )}
       </div>
     </header>
   );

@@ -10,16 +10,16 @@ const ContactPage = () => {
     <div className="bg-zinc-50">
       <Header />
       <div className="bg-white">
-        <div className="w-[60%] mx-auto text-center text-black">
+        <div className="w-[60%] mx-auto text-center text-black max-sm:w-[97%]">
           <div className="mt-10 text-[#803f1f] text-sm font-semibold">
             NOUS CONTACTER
           </div>
-          <h3 className="text-4xl text-gray-600 my-10 font-bold">
+          <h3 className="text-4xl text-gray-600 my-10 font-bold max-sm:text-xl">
             Avez-vous une <span className="text-green-700">préoccupation</span>{" "}
             ?
           </h3>
 
-          <div className="grid grid-cols-2 gap-3 my-10 text-start">
+          <div className="grid grid-cols-2 gap-3 my-10 text-start max-sm:grid-cols-1">
             <div className="flex flex-col gap-10 sm:gap-6">
               <div>
                 <h4 className="text-black">Adresse physique : </h4>

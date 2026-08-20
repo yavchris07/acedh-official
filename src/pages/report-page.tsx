@@ -35,7 +35,7 @@ const ReportPage = () => {
     <div className="bg-zinc-50">
       <Header />
       <div className="bg-white">
-        <div className="w-[70%] mx-auto text-center text-black max-sm:w-[90%]">
+        <div className="w-[70%] mx-auto text-center text-black max-sm:w-[97%]">
           <div className="mt-10 text-green-700 text-sm font-semibold">
             NOS RAPPORTS
           </div>

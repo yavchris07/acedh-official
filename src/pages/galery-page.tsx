@@ -29,7 +29,7 @@ const GaleryPage = () => {
     <div className="bg-zinc-50">
       <Header />
       <div className="bg-white mb-24">
-        <div className="w-[70%] mx-auto text-center text-black">
+        <div className="w-[70%] mx-auto text-center text-black max-sm:w-[97%]">
           <div className="mt-10 text-green-700 text-sm font-semibold">
             NOTRE GALLLERIE
           </div>
@@ -62,7 +62,7 @@ const GaleryPage = () => {
         </div>
 
         {galleries.length > 8 && (
-          <div className="w-[70%] mx-auto flex gap-2 text-gray-500 px-4 py-2 rounded mt-6">
+          <div className="w-[70%] mx-auto flex gap-2 text-gray-500 px-4 py-2 rounded mt-6 max-sm:w-[97%] max-sm:text-sm">
             <button
               disabled={currentPage === 1}
               onClick={() => setCurrentPage((prev) => prev - 1)}

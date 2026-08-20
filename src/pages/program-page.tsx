@@ -60,7 +60,7 @@ const ProgramPage = () => {
       <Statistics />
 
       <div className="bg-white my-14">
-        <div className="w-[60%] mx-auto text-center text-black max-sm:w-[90%]">
+        <div className="w-[60%] mx-auto text-center text-black max-sm:w-[97%]">
           <h3 className="text-4xl text-gray-600 my-10 font-bold max-sm:text-xl">
             Environnement et <span className="text-green-800">Justice</span>{" "}
             climatique
@@ -99,7 +99,6 @@ const ProgramPage = () => {
         </div>
       </div>
 
-      <div className="w-[60%] mx-auto text-center text-black my-14"></div>
       <Footer />
     </div>
   );
