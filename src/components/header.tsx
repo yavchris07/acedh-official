@@ -99,7 +99,7 @@ export default function Header() {
           <div className="lg:hidden md:hidden">
             <button className="text-gray-700" onClick={() => setOpen(true)}>
               {open ? (
-                <X className="size-6" onClick={() => setOpen(!open)} />
+                <X className="size-6" onClick={() => setOpen(false)}/>
               ) : (
                 <svg
                   className="w-6 h-6"
@@ -132,6 +132,7 @@ export default function Header() {
                 <a
                   key={item.href}
                   href={item.href}
+                  // onClick={() => setOpen(!open)}
                   // className="text-gray-700 hover:text-green-600 transition-colors whitespace-nowrap"
                   className={`transition-colors whitespace-nowrap ${
                     isActive

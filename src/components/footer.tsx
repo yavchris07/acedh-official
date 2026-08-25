@@ -8,8 +8,8 @@ const Footer = () => {
     { label: "À propos", href: "/about" },
     { label: "Nos Ressources", href: "/resource" },
     { label: "Nos Programmes", href: "/programs" },
-    { label: "Nos Actualités", href: "/blog" },
-    { label: "Notre Gallérie", href: "/galery" },
+    { label: "Nos Actualités", href: "/blogs" },
+    { label: "Notre Gallérie", href: "/galeries" },
   ];
 
   const { contacts, loading } = useContacts();
