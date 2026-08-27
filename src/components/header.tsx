@@ -1,8 +1,3 @@
-// import logo from "../public/logo.png";
-// import x from "../public/x-logo.png";
-// import linked from "../public/linkenid.png";
-// import fb from "../public/facebook.png";
-
 import fb from "../assets/facebook.png";
 import linked from "../assets/linkenid.png";
 import x from "../assets/x-logo.png";

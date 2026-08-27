@@ -4,6 +4,7 @@ import Header from "../components/header";
 import { decryptId } from "../utils/crypting";
 import { formatResume } from "../utils/format-resume";
 import { useGetReport } from "../features/rapport/hooks/use-get-report";
+import { useEffect } from "react";
 
 const SingleReport = () => {
   const { id } = useParams<{ id: string }>();
@@ -15,10 +16,26 @@ const SingleReport = () => {
   const idx = decryptId(id ?? "");
   // const { activity, loading } = useGetActivity(Number(idx));
   //   const { comments, error, loading: load, refresh } = useComments(Number(idx));
-  const {error,loading,report} = useGetReport(Number(idx));
-  console.log('RRRR : ',report)
+  const { error, loading, report, metaData } = useGetReport(Number(idx));
+  console.log("RRRR : ", report);
 
-  if(error) return <p>Une erreur s'est produite ! Veuillez reactualiser la page !</p>
+  console.log("META DATA : ", metaData);
+  useEffect(() => {
+    if (!metaData) return;
+    document.title = metaData.og_title;
+    document
+      .querySelector('meta[property="og:title"]')
+      ?.setAttribute("content", metaData.og_title);
+    document
+      .querySelector('meta[property="og:description"]')
+      ?.setAttribute("content", metaData.og_description);
+    document
+      .querySelector('meta[property="og:image"]')
+      ?.setAttribute("content", metaData.og_image);
+  }, [metaData]);
+
+  if (error)
+    return <p>Une erreur s'est produite ! Veuillez reactualiser la page !</p>;
 
   return (
     <div className="bg-zinc-50">
@@ -43,12 +60,11 @@ const SingleReport = () => {
         </div>
 
         <h2 className="text-gray-900 text-2xl font-semibold my-4 max-sm:xl">
-          {report?.commentaire.substring(0,120)}
+          {report?.commentaire.substring(0, 120)}
         </h2>
         <div className="text-gray-500 text-xl max-sm:text-sm">
           {formatResume(report?.commentaire ?? "")}
         </div>
-
       </div>
       <Footer />
     </div>

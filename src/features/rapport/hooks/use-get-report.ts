@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
 import { reportApi } from "../api";
-import type { Report } from "../../../utils/type";
+import type { MetaData, Report } from "../../../utils/type";
 
 export const useGetReport = (id: number) => {
   const [report, setReport] = useState<Report>();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [metaData, setMetaData] = useState<MetaData>();
 
   const fetchActivity = async () => {
     try {
       setLoading(true);
       const data = await reportApi.get(id);
       setReport(data.data);
+      setMetaData(data.meta_data);
     } catch (err) {
       if (err instanceof Error) setError(err.message);
     } finally {
@@ -24,5 +26,5 @@ export const useGetReport = (id: number) => {
     fetchActivity();
   }, []);
 
-  return { report, loading, error, refresh: fetchActivity };
+  return { report, metaData, loading, error, refresh: fetchActivity };
 };

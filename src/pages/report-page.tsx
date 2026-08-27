@@ -31,6 +31,7 @@ const ReportPage = () => {
   console.log('RAPPORTS : ',currentRapports);
 
   const totalPages = Math.ceil(projects.length / itemsPerPage);
+  
   return (
     <div className="bg-zinc-50">
       <Header />

@@ -116,3 +116,8 @@ export type Team = {
   image: File | null; // URL ou File
 };
 
+export type MetaData = {
+  og_description: string;
+  og_image: string;
+  og_title: string;
+};
