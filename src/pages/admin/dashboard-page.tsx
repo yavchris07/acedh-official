@@ -27,9 +27,9 @@ const DashboardPage = () => {
         <AdminCard card={{ title: "partenaires", value: partners.length }} />
         <AdminCard card={{ title: "Liste mails", value: mails.length }} />
       </div>
-      <div className="mt-4">
+      <div className="mt-4 grid grid-cols-5">
         {mails.length > 0 &&
-          mails.map((mail: Mail) => (
+          mails.slice(0,40).map((mail: Mail) => (
             <div key={mail.id} className="flex items-center gap-4 p-4">
               <div className="w-10 h-10 rounded-full bg-blue-600"></div>
               <div>

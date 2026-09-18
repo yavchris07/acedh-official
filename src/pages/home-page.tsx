@@ -44,7 +44,7 @@ const HomePage = () => {
   }
 
   return (
-    <div className="bg-zinc-100 font-sans">
+    <div className="bg-zinc-100 font-poppins">
       <Header />
       {/* <Navbar/> */}
       <Hero />

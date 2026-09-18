@@ -11,7 +11,12 @@ const SingleReport = () => {
   if (!id) {
     console.log(id);
     console.log("Rapport non trouve !!");
+
   }
+
+//   if (!id) {
+//   return <p>Rapport non trouvé.</p>;
+// }
 
   const idx = decryptId(id ?? "");
   // const { activity, loading } = useGetActivity(Number(idx));
@@ -72,3 +77,4 @@ const SingleReport = () => {
 };
 
 export default SingleReport;
+

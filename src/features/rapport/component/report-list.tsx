@@ -23,9 +23,10 @@ const ReportList = ({
     onRefresh();
   }, [onRefresh]);
   const { showToast } = useToast();
+  const path = 'https://altspace.acedh-rdc.org/api/meta_data/';
 
   const handleCopy = (url: string, id: number) => {
-    navigator.clipboard.writeText(url).then(() => {
+    navigator.clipboard.writeText(url+id).then(() => {
       setCopiedId(id);
       showToast("Lien Copié avec succès", "success");
       setTimeout(() => {
@@ -91,7 +92,7 @@ const ReportList = ({
                 </button>
 
                 <button
-                  onClick={() => handleCopy(report.fichier_pdf, report.id)}
+                  onClick={() => handleCopy(path, report.id)}
                   className="text-blue-600 hover:text-blue-500"
                 >
                   {copiedId === report.id ? (
