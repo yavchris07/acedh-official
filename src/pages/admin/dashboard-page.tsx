@@ -6,7 +6,7 @@ import { useMailLists } from "../../features/mail-list/hooks/use-mal-lists";
 import { usePartners } from "../../features/partner/hooks/use-fetch-partners";
 import { useProjects } from "../../features/project/hooks/use-projects";
 import { useReports } from "../../features/rapport/hooks/use-reports";
-import type { Mail } from "../../utils/type";
+// import type { Mail } from "../../utils/type";
 
 const DashboardPage = () => {
 
@@ -27,7 +27,7 @@ const DashboardPage = () => {
         <AdminCard card={{ title: "partenaires", value: partners.length }} />
         <AdminCard card={{ title: "Liste mails", value: mails.length }} />
       </div>
-      <div className="mt-4 grid grid-cols-5">
+      {/* <div className="mt-4 grid grid-cols-5">
         {mails.length > 0 &&
           mails.slice(0,40).map((mail: Mail) => (
             <div key={mail.id} className="flex items-center gap-4 p-4">
@@ -45,7 +45,7 @@ const DashboardPage = () => {
             </p>
           )}
         </div>
-      </div>
+      </div> */}
     </Container>
   );
 };
